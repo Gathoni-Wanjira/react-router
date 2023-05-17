@@ -2,6 +2,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import {Home} from "./pages/Home";
 import {Books} from './pages/Books';
 import {Booklist} from './pages/Booklist';
+import {Newbook} from './pages/Newbook';
+import {NotFound} from './pages/NotFound';
 
 
 
@@ -19,8 +21,10 @@ function App() {
 
     <Routes>
       <Route path="/" element = {<Home />}/>
-      <Route path="/books" element = {<Booklist /> }/>
-      <Route path="/books/:id" element = {<Books />}/>
+      <Route path="/books" element = {<Booklist /> } />
+      <Route path="/books/:id" element = {<Books />} />
+      <Route path="/books/new" element = {<Newbook/>} />
+      <Route path="*" element = { <NotFound />} />
       
 
 
