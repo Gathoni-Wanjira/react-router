@@ -4,6 +4,7 @@ import {Books} from './pages/Books';
 import {Booklist} from './pages/Booklist';
 import {Newbook} from './pages/Newbook';
 import {NotFound} from './pages/NotFound';
+import { Booklayout } from "./pages/Booklayout";
 
 
 
@@ -21,9 +22,16 @@ function App() {
 
     <Routes>
       <Route path="/" element = {<Home />}/>
-      <Route path="/books" element = {<Booklist /> } />
-      <Route path="/books/:id" element = {<Books />} />
-      <Route path="/books/new" element = {<Newbook/>} />
+
+{/* Nested routes... We nest the following under /books path */}
+      <Route path="/books" element = {<Booklayout />}>
+        <Route index element = {<Booklist/>}/>
+        <Route path=":id" element = {<Books />}/>
+        <Route path="new" element = {<Newbook />}/>
+
+
+      </Route>
+     
       <Route path="*" element = { <NotFound />} />
       
 
