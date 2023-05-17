@@ -17,7 +17,7 @@ function App() {
 
     <Routes>
       <Route path="/" element = {<Home />}/>
-      <Route path="/books" element = {<Booklist />}/>
+      <Route path="/books" element = {<Booklist /> }/>
 
 
       
@@ -30,3 +30,10 @@ export default App;
 
 // Route is the path
 // Routes wraps over individual route components
+// Router types  
+    //  The browser router
+    // The History Router
+    // The hash router
+    // The memory router
+    // Static Router
+    
