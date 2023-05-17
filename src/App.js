@@ -1,11 +1,28 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import {Home} from "./pages/Home";
+import {Booklist} from './pages/Booklist';
+
+
 function App() {
   return (
-    <Routes>
-      <Route>
+    <>
+    <nav>
+      <ul>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to="/books">Books</Link></li>
+      </ul>
+    </nav>
+  
 
-      </Route>
+
+    <Routes>
+      <Route path="/" element = {<Home />}/>
+      <Route path="/books" element = {<Booklist />}/>
+
+
+      
     </Routes>
+     </>
   );
 }
 
