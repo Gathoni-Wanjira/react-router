@@ -11,6 +11,13 @@ import { Booklayout } from "./pages/Booklayout";
 function App() {
   return (
     <>
+    <Routes>
+
+      <Route path="/books" element = {<h1>Extra Content</h1>} />  
+      
+    </Routes>
+
+
     <nav>
       <ul>
         <li><Link to='/'>Home</Link></li>

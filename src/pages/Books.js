@@ -8,3 +8,5 @@ export function Books () {
     <h1> Book {id} {obj.Hello} </h1>
     );
 };
+
+// You get to use useParams () while handling routes with dynamic parameters ...ie /.id that keeps on changing with different URLs.
