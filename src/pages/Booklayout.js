@@ -1,8 +1,10 @@
-import {useState} from "react";
-import { Link, Outlet} from "react-router-dom";
+// import {useState} from "react";
+import { Link, Outlet, useSearchParams} from "react-router-dom";
 
 export function Booklayout () {
-    const [number, setNumber] = useState(3)
+    const [searchParams , setSearchParams] = useSearchParams({n:3})
+    const number = searchParams.get("n")
+   
     return (
         <>
         
@@ -14,7 +16,7 @@ export function Booklayout () {
         <br />
         <Link to= '/books/new'>Newbook</Link>
         <Outlet context={{Hello: "World"}}/>
-        <input type = "number" value = {number} onChange = {(e) => setNumber(e.target.value)}></input> 
+        <input type = "number" value = {number} onChange = {e => setSearchParams({n: e.target.value})} ></input> 
         </>
 
     );  
