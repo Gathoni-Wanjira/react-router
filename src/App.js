@@ -1,12 +1,15 @@
-import { NavLink, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NotFound } from './pages/NotFound';
 import { BooksRoute } from "./pages/BooksRoute";
+import {Booklayout} from "./pages/Booklayout";
 
 
 
 
 function App() {
+  const location = useLocation()
+  console.log(location);
 
   return (
     <>
@@ -15,9 +18,7 @@ function App() {
         <ul>
           <li>
             <NavLink 
-             style = {({isActive}) =>{
-              return isActive ? {color : "red" } : {}
-              }} to='/' >
+            to='/' state= "Hi" >
                  Home
                </NavLink>
             
@@ -28,14 +29,17 @@ function App() {
         </ul>
       </nav>
 
-
+{location.state}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/books/*" element={<BooksRoute />} />
         <Route path="*" element={<NotFound />} />
 
       </Routes>
+      <br/>
+      <Booklayout />
     </>
+
   );
 };
 
