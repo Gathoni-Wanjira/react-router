@@ -1,7 +1,8 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NotFound } from './pages/NotFound';
- import { BooksRoute } from "./pages/BooksRoute";
+import { BooksRoute } from "./pages/BooksRoute";
+
 
 
 
@@ -9,21 +10,31 @@ function App() {
 
   return (
     <>
-     
+
       <nav>
         <ul>
-          <li><Link to='/' replace> Home </Link></li>
-          <li><Link to="/books"> Books </Link></li>
+          <li>
+            <NavLink 
+             style = {({isActive}) =>{
+              return isActive ? {color : "red" } : {}
+              }} to='/' >
+                 Home
+               </NavLink>
+            
+          </li>
+          <li>
+            <NavLink to="/books"> Books </NavLink>
+          </li>
         </ul>
       </nav>
 
 
-       <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/books/*" element={<BooksRoute />} />
         <Route path="*" element={<NotFound />} />
 
-      </Routes> 
+      </Routes>
     </>
   );
 };
